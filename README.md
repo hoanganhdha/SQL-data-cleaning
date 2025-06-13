@@ -107,3 +107,23 @@ Result:
 |51|
 |46|
 |52|
+
+### 3.2 Martial status
+#### Upper case
+```sql
+UPDATE club_member_info_cleaned
+SET martial_status = UPPER(martial_status)
+```
+Result:
+|UPPER(martial_status)|
+|---------------------|
+|MARRIED|
+|MARRIED|
+|DIVORCED|
+|UNKNOWN|
+|MARRIED|
+|SINGLE|
+|MARRIED|
+|DIVORCED|
+|SINGLE|
+|MARRIED|
