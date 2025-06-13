@@ -46,10 +46,6 @@ SELECT * FROM club_member_info;
 ### 3.1 Full name
 #### Trim whitespaces
 ```sql
-SELECT TRIM(full_name)
-FROM club_member_info_cleaned cmic
-```
-```sql
 UPDATE club_member_info_cleaned
 SET full_name = TRIM(full_name);
 ```
