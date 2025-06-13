@@ -114,6 +114,12 @@ Result:
 UPDATE club_member_info_cleaned
 SET martial_status = UPPER(martial_status)
 ```
+#### Edit blank values
+```sql
+UPDATE club_member_info_cleaned
+SET martial_status = 'UNKNOWN'
+WHERE martial_status = '';
+```
 Result:
 |UPPER(martial_status)|
 |---------------------|
