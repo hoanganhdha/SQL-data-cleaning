@@ -42,3 +42,13 @@ CREATE TABLE club_member_info_cleaned (
 INSERT INTO club_member_info_cleaned 
 SELECT * FROM club_member_info;
 ```
+## Clean data and document it
+### Clean leading and trailing whitespaces
+```sql
+SELECT TRIM(full_name)
+FROM club_member_info_cleaned cmic
+```
+```sql
+UPDATE club_member_info_cleaned
+SET full_name = TRIM(full_name);
+```
