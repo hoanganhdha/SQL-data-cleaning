@@ -80,3 +80,30 @@ Result:
 |JOETE CUDIFF|
 |MENDIE ALEXANDRESCU|
 |FEY KLOSS|
+#### Fix age to correct value
+##### Correct age value
+```sql
+UPDATE club_member_info_cleaned
+SET age = CAST(SUBSTR(age, 1, 2) AS INTEGER)
+WHERE age > 100 and age <> ''
+```
+##### Edit empty age value
+```sql
+UPDATE club_member_info_cleaned
+SET age = (SELECT ROUND(AVG(age),0)
+FROM club_member_info_cleaned)
+WHERE age = ''
+```
+Result:
+|age|
+|---|
+|40|
+|46|
+|46|
+|35|
+|38|
+|44|
+|41|
+|51|
+|46|
+|52|
